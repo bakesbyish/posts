@@ -1,0 +1,9 @@
+# Ignore the .env file
+.env
+
+# Ignore the Instagram config folder
+config/*
+
+# Ignore the __pycache__ folder
+__pycache__/*
+**/__pycache__/*
