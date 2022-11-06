@@ -44,7 +44,7 @@ def reminder_to_upload_more_photos():
     response.ok
 
 
-def send_uploaded_image_detials(image_link, product_title, product_code, platform):
+def send_uploaded_image_detials(image_link, product_title, product_sku, product_price):
     """Send a message describing the uploaded image."""
     data = {
         'messaging_product': 'whatsapp',
@@ -76,12 +76,12 @@ def send_uploaded_image_detials(image_link, product_title, product_code, platfor
                         },
                         {
                             'type': 'text',
-                            'text': product_code
+                            'text': product_sku
                         },
                         {
                             'type': 'text',
-                            'text': platform
-                        },
+                            'text': product_price
+                        }
                     ]
                 }
             ]
@@ -91,14 +91,14 @@ def send_uploaded_image_detials(image_link, product_title, product_code, platfor
     response.ok
 
 
-def renaming_error(file_name):
+def error(file_name):
     """Alert the user that a specific file renamming pattern was wrong."""
     data = {
         'messaging_product': 'whatsapp',
         'to': whatsapp_recepient_phone_number,
         'type': 'template',
         'template': {
-            'name': 'renaming_error',
+            'name': 'error',
                 'language': {
                     'code': 'en_US'
                 },
@@ -112,7 +112,7 @@ def renaming_error(file_name):
                         },
                     ]
                 }
-            ]
+                    ]
         }
     }
     response = requests.post(url, headers=headers, data=json.dumps(data))
