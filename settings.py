@@ -12,3 +12,4 @@ whatsapp_accsess_token = config("WHATSAPP_ACCSESS_TOKEN", default="")
 whatsapp_phonenumber_id = config("WHATSAPP_PHONENUMBER_ID", default="")
 whatsapp_recepient_phone_number = config(
     "WHATSAPP_RECEIPENT_PHONE_NUMBER", default="")
+redis_password = config("REDIS_PASSWORD", default="")
