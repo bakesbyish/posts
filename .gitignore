@@ -7,3 +7,6 @@ config/*
 # Ignore the __pycache__ folder
 __pycache__/*
 **/__pycache__/*
+
+# Ignore th .uploaded file
+.uploaded
