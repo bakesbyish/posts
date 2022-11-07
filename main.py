@@ -8,16 +8,17 @@ from messaging import whatsapp
 
 # Choose an image randomly
 chosen_image = randomly.choose_a_file(
-    settings.path_of_images_to_upload, "./uploaded.txt")
-if chosen_image == "":
+    settings.path_of_images_to_upload, f"{os.getcwd()}/uploaded.txt")
+print(chosen_image)
+if chosen_image == "" or chosen_image is None:
 
     if os.path.isfile(".uploaded"):
         whatsapp.reminder_to_upload_more_photos()
     else:
-        open(".uploaded").close()
+        whatsapp.all_images_uploaded()
+        os.system("touch .uploaded")
 
     print("All the images have been uploaded")
-    whatsapp.all_images_uploaded()
     quit()
 
 try:

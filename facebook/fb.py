@@ -4,7 +4,7 @@ import requests
 
 def upload_fb(image_link, token, page_id):
     """Upload the given image link to the given Facebook credentials."""
-    msg = "Please call or WhatsApp on 0717121856. \nIsland wide delivery available \nCash on Delivery or Bank Deposits accepted."
+    msg = "WhatsApp: links.bakesbyish.com/whatsapp\nInstagram: links.bakesbyish.com/ig\nWeb: bakesbyish.com\nLocation: links.bakesbyish.com/map\nIsland wide delivery available with Cash On Delivery"
     image_url = 'https://graph.facebook.com/{}/photos'.format(page_id)
     payload = {
         'message': msg,
