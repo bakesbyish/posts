@@ -8,8 +8,7 @@ def choose_a_file(path_of_images_to_upload, path_of_uploaded_images_file):
     """Return a file to upload randomly."""
     files = []
     for file in os.listdir(path_of_images_to_upload):
-        files.append(str(file).replace("-", "_").replace(" ",
-                     "_").replace("$", "_").replace("%", "_").replace("@", "_"))
+        files.append(file)
 
     file = sorted(files)
 
