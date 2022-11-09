@@ -1,10 +1,14 @@
 """Choose an Image apply the template and upload to Facebook and Instagram."""
 import os
+import time
 import settings
 from utils import randomly, convert, imgur
 from facebook import template as fb_template, fb
 # from instagram import template as ig_template, ig
 from messaging import whatsapp
+
+# Wait till the drives are properly mounted
+time.sleep(10 * 60)
 
 # Choose an image randomly
 chosen_image = randomly.choose_a_file(
